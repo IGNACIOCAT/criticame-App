@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      <ion-icon color="dark" size="large" name="logo-octocat"></ion-icon>
+    </ion-title>
+    <ion-button (click)="volverHome()" shape="round" slot="end" color="dark">
+      <ion-icon size="large" name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="dark">
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <h1>Recuperar contraseña</h1>
+        <br />
+        <h5>Ingrese el usuario de su cuenta</h5>
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="formularioRecuperacion" (ngSubmit)="enviarSolicitud()">
+      <ion-row>
+        <ion-input
+          color="tertiary"
+          label="Usuario"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese usuario"
+          maxLength="15"
+          formControlName="usuario"
+        >
+          <ion-icon
+            size="large"
+            color="tertiary"
+            slot="start"
+            name="person-outline"
+          ></ion-icon
+        ></ion-input>
+      </ion-row>
+      <br />
+      <ion-button
+        type="submit"
+        color="tertiary"
+        expand="block"
+        size="large"
+        shape="round"
+        >Enviar
+      </ion-button>
+      <br />
+    </form>
+  </ion-grid>
+</ion-content>

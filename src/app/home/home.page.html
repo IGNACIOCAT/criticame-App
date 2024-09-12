@@ -1,20 +1,65 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+      slot="end"
+    >
+      <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+    <ion-searchbar
+      show-clear-button="focus"
+      value="Buscar..."
+      color="dark"
+    ></ion-searchbar>
+    <ion-avatar slot="start">
+      <img
+        alt="Foto usuario"
+        src="https://ionicframework.com/docs/img/demos/avatar.svg"
+      />
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" class="ion-padding" color="dark">
+  <div class="ion-text-center content">
+    <ion-card color="tertiary">
+      <ion-card-header>
+        <ion-card-title>Bienvenido {{datos.user}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="map">
+      <img src="assets/images/maps.jpg" alt="map" />
+    </ion-card>
   </div>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col size="8"
+        ><ion-button expand="block" shape="round" size="large" color="tertiary"
+          >Buscar totems</ion-button
+        ></ion-col
+      >
+      <ion-col size="4"
+        ><ion-button class="btn-scan" size="large" color="light" shape="round">
+          <ion-icon class="camera-icon" slot="end" name="camera"></ion-icon>
+          QR</ion-button
+        ></ion-col
+      >
+    </ion-row>
+  </ion-grid>
 </ion-content>

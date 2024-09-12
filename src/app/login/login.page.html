@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title
+      ><ion-icon color="dark" size="large" name="logo-octocat"></ion-icon
+    ></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="dark">
+  <ion-grid [fixed]="true">
+    <ion-col class="logo-container">
+      <img src="assets/images/logo.png" alt="logo" />
+    </ion-col>
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <h1>Login</h1>
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="formularioLogin" (ngSubmit)="guardar()">
+      <ion-row>
+        <ion-input
+          color="tertiary"
+          label="Usuario"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese usuario"
+          maxLength="15"
+          formControlName="usuario"
+        >
+          <ion-icon
+            size="large"
+            color="tertiary"
+            slot="start"
+            name="person-outline"
+          ></ion-icon
+        ></ion-input>
+      </ion-row>
+      <br />
+      <ion-row>
+        <ion-input
+          color="tertiary"
+          label="Contraseña"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese contraseña"
+          formControlName="contrasena"
+        >
+          <ion-icon size="large" slot="start" name="lock-closed-outline">
+          </ion-icon>
+        </ion-input>
+      </ion-row>
+      <br />
+      <ion-button type="submit" expand="block" size="large" shape="round"
+        >Ingresar
+      </ion-button>
+      <br />
+    </form>
+    <ion-row>
+      <ion-col class="ion-text-center"
+        ><a href="/recuperar-contrasena">¿Olvidaste tu contraseña?</a></ion-col
+      ></ion-row
+    >
+  </ion-grid>
+</ion-content>
